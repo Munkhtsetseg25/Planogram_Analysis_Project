@@ -1,5 +1,3 @@
-# requirements.txt файл дотор
-
 streamlit
 ultralytics
 opencv-python

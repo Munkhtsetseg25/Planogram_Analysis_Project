@@ -1,0 +1,645 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "name": "100 naslaarai"
+    },
+    {
+      "id": 1,
+      "name": "2080"
+    },
+    {
+      "id": 2,
+      "name": "A+"
+    },
+    {
+      "id": 3,
+      "name": "Pantene"
+    },
+    {
+      "id": 4,
+      "name": "ahmad"
+    },
+    {
+      "id": 5,
+      "name": "akbar"
+    },
+    {
+      "id": 6,
+      "name": "always"
+    },
+    {
+      "id": 7,
+      "name": "amber"
+    },
+    {
+      "id": 8,
+      "name": "anita"
+    },
+    {
+      "id": 9,
+      "name": "aquafresh"
+    },
+    {
+      "id": 10,
+      "name": "ariel"
+    },
+    {
+      "id": 11,
+      "name": "ariun"
+    },
+    {
+      "id": 12,
+      "name": "attack"
+    },
+    {
+      "id": 13,
+      "name": "babylab"
+    },
+    {
+      "id": 14,
+      "name": "belizna"
+    },
+    {
+      "id": 15,
+      "name": "bella"
+    },
+    {
+      "id": 16,
+      "name": "bibi"
+    },
+    {
+      "id": 17,
+      "name": "bimax"
+    },
+    {
+      "id": 18,
+      "name": "biomio"
+    },
+    {
+      "id": 19,
+      "name": "biomon"
+    },
+    {
+      "id": 20,
+      "name": "blend a med"
+    },
+    {
+      "id": 21,
+      "name": "blue touch"
+    },
+    {
+      "id": 22,
+      "name": "botanical garden"
+    },
+    {
+      "id": 23,
+      "name": "bro chips"
+    },
+    {
+      "id": 24,
+      "name": "bunny"
+    },
+    {
+      "id": 25,
+      "name": "carefree"
+    },
+    {
+      "id": 26,
+      "name": "classic"
+    },
+    {
+      "id": 27,
+      "name": "clean&white"
+    },
+    {
+      "id": 28,
+      "name": "clear"
+    },
+    {
+      "id": 29,
+      "name": "closeup"
+    },
+    {
+      "id": 30,
+      "name": "coffeeking"
+    },
+    {
+      "id": 31,
+      "name": "colgate"
+    },
+    {
+      "id": 32,
+      "name": "comet"
+    },
+    {
+      "id": 33,
+      "name": "comfort"
+    },
+    {
+      "id": 34,
+      "name": "cucu"
+    },
+    {
+      "id": 35,
+      "name": "daisy"
+    },
+    {
+      "id": 36,
+      "name": "discreet"
+    },
+    {
+      "id": 37,
+      "name": "divo"
+    },
+    {
+      "id": 38,
+      "name": "domestos"
+    },
+    {
+      "id": 39,
+      "name": "dove"
+    },
+    {
+      "id": 40,
+      "name": "duru"
+    },
+    {
+      "id": 41,
+      "name": "elis"
+    },
+    {
+      "id": 42,
+      "name": "elkos"
+    },
+    {
+      "id": 43,
+      "name": "elseve"
+    },
+    {
+      "id": 44,
+      "name": "enkhjin"
+    },
+    {
+      "id": 45,
+      "name": "fa"
+    },
+    {
+      "id": 46,
+      "name": "fairy"
+    },
+    {
+      "id": 47,
+      "name": "fasclean"
+    },
+    {
+      "id": 48,
+      "name": "first lady"
+    },
+    {
+      "id": 49,
+      "name": "flamingo"
+    },
+    {
+      "id": 50,
+      "name": "foxy"
+    },
+    {
+      "id": 51,
+      "name": "garnier"
+    },
+    {
+      "id": 52,
+      "name": "giggles"
+    },
+    {
+      "id": 53,
+      "name": "glade"
+    },
+    {
+      "id": 54,
+      "name": "gleace"
+    },
+    {
+      "id": 55,
+      "name": "goony"
+    },
+    {
+      "id": 56,
+      "name": "greenfield"
+    },
+    {
+      "id": 57,
+      "name": "gut&gunsting"
+    },
+    {
+      "id": 58,
+      "name": "hana"
+    },
+    {
+      "id": 59,
+      "name": "harmony"
+    },
+    {
+      "id": 60,
+      "name": "head&shoulders"
+    },
+    {
+      "id": 61,
+      "name": "huggies"
+    },
+    {
+      "id": 62,
+      "name": "ikh taiga"
+    },
+    {
+      "id": 63,
+      "name": "impra"
+    },
+    {
+      "id": 64,
+      "name": "java"
+    },
+    {
+      "id": 65,
+      "name": "jedentag"
+    },
+    {
+      "id": 66,
+      "name": "johnson's"
+    },
+    {
+      "id": 67,
+      "name": "kerasys"
+    },
+    {
+      "id": 68,
+      "name": "khaantan"
+    },
+    {
+      "id": 69,
+      "name": "khatad"
+    },
+    {
+      "id": 70,
+      "name": "khuvsgul"
+    },
+    {
+      "id": 71,
+      "name": "kleenex bathroom paper"
+    },
+    {
+      "id": 72,
+      "name": "kleenex kt"
+    },
+    {
+      "id": 73,
+      "name": "kleenex tissue"
+    },
+    {
+      "id": 74,
+      "name": "kleenex wipes"
+    },
+    {
+      "id": 75,
+      "name": "kotex"
+    },
+    {
+      "id": 76,
+      "name": "lady"
+    },
+    {
+      "id": 77,
+      "name": "lanolovie"
+    },
+    {
+      "id": 78,
+      "name": "lays"
+    },
+    {
+      "id": 79,
+      "name": "liby"
+    },
+    {
+      "id": 80,
+      "name": "lipton"
+    },
+    {
+      "id": 81,
+      "name": "liq"
+    },
+    {
+      "id": 82,
+      "name": "living"
+    },
+    {
+      "id": 83,
+      "name": "loyd"
+    },
+    {
+      "id": 84,
+      "name": "lux"
+    },
+    {
+      "id": 85,
+      "name": "maccereal"
+    },
+    {
+      "id": 86,
+      "name": "mactea"
+    },
+    {
+      "id": 87,
+      "name": "mamypoko"
+    },
+    {
+      "id": 88,
+      "name": "maxkleen9"
+    },
+    {
+      "id": 89,
+      "name": "minime"
+    },
+    {
+      "id": 90,
+      "name": "moni happy"
+    },
+    {
+      "id": 91,
+      "name": "moony"
+    },
+    {
+      "id": 92,
+      "name": "mr.muscle"
+    },
+    {
+      "id": 93,
+      "name": "mungun ayga"
+    },
+    {
+      "id": 94,
+      "name": "naiman gishuun tuguldur"
+    },
+    {
+      "id": 95,
+      "name": "naturella"
+    },
+    {
+      "id": 96,
+      "name": "new top"
+    },
+    {
+      "id": 97,
+      "name": "nivea"
+    },
+    {
+      "id": 98,
+      "name": "nurse with ears"
+    },
+    {
+      "id": 99,
+      "name": "obuhiv"
+    },
+    {
+      "id": 100,
+      "name": "ok"
+    },
+    {
+      "id": 101,
+      "name": "ola"
+    },
+    {
+      "id": 102,
+      "name": "omo"
+    },
+    {
+      "id": 103,
+      "name": "oralb"
+    },
+    {
+      "id": 104,
+      "name": "pampers"
+    },
+    {
+      "id": 105,
+      "name": "panda"
+    },
+    {
+      "id": 106,
+      "name": "parodontax"
+    },
+    {
+      "id": 107,
+      "name": "pepsodent"
+    },
+    {
+      "id": 108,
+      "name": "persil"
+    },
+    {
+      "id": 109,
+      "name": "perwoll"
+    },
+    {
+      "id": 110,
+      "name": "popular"
+    },
+    {
+      "id": 111,
+      "name": "pringles"
+    },
+    {
+      "id": 112,
+      "name": "pronto"
+    },
+    {
+      "id": 113,
+      "name": "protex"
+    },
+    {
+      "id": 114,
+      "name": "ps"
+    },
+    {
+      "id": 115,
+      "name": "rascal friends"
+    },
+    {
+      "id": 116,
+      "name": "rascals"
+    },
+    {
+      "id": 117,
+      "name": "red"
+    },
+    {
+      "id": 118,
+      "name": "renova"
+    },
+    {
+      "id": 119,
+      "name": "romano"
+    },
+    {
+      "id": 120,
+      "name": "safeguard"
+    },
+    {
+      "id": 121,
+      "name": "sanitas"
+    },
+    {
+      "id": 122,
+      "name": "saraana"
+    },
+    {
+      "id": 123,
+      "name": "sarma"
+    },
+    {
+      "id": 124,
+      "name": "selpak"
+    },
+    {
+      "id": 125,
+      "name": "sensodyne"
+    },
+    {
+      "id": 126,
+      "name": "silk sense"
+    },
+    {
+      "id": 127,
+      "name": "sir"
+    },
+    {
+      "id": 128,
+      "name": "soffione"
+    },
+    {
+      "id": 129,
+      "name": "sofy body fit"
+    },
+    {
+      "id": 130,
+      "name": "sorti"
+    },
+    {
+      "id": 131,
+      "name": "splat"
+    },
+    {
+      "id": 132,
+      "name": "stimo"
+    },
+    {
+      "id": 133,
+      "name": "sunsilk"
+    },
+    {
+      "id": 134,
+      "name": "super"
+    },
+    {
+      "id": 135,
+      "name": "surf"
+    },
+    {
+      "id": 136,
+      "name": "syoss"
+    },
+    {
+      "id": 137,
+      "name": "tanay"
+    },
+    {
+      "id": 138,
+      "name": "tastea"
+    },
+    {
+      "id": 139,
+      "name": "tess"
+    },
+    {
+      "id": 140,
+      "name": "tide"
+    },
+    {
+      "id": 141,
+      "name": "tod"
+    },
+    {
+      "id": 142,
+      "name": "tody"
+    },
+    {
+      "id": 143,
+      "name": "toilet duck"
+    },
+    {
+      "id": 144,
+      "name": "toorkhon"
+    },
+    {
+      "id": 145,
+      "name": "tos"
+    },
+    {
+      "id": 146,
+      "name": "tresemme"
+    },
+    {
+      "id": 147,
+      "name": "trio"
+    },
+    {
+      "id": 148,
+      "name": "ud"
+    },
+    {
+      "id": 149,
+      "name": "umka"
+    },
+    {
+      "id": 150,
+      "name": "unibaby"
+    },
+    {
+      "id": 151,
+      "name": "unidry"
+    },
+    {
+      "id": 152,
+      "name": "urin"
+    },
+    {
+      "id": 153,
+      "name": "ushyasti nyn"
+    },
+    {
+      "id": 154,
+      "name": "vernel"
+    },
+    {
+      "id": 155,
+      "name": "viso"
+    },
+    {
+      "id": 156,
+      "name": "white"
+    },
+    {
+      "id": 157,
+      "name": "ya rodilsya"
+    },
+    {
+      "id": 158,
+      "name": "zero"
+    }
+  ],
+  "info": {
+    "year": 2025,
+    "version": "1.0",
+    "contributor": "Label Studio"
+  }
+}

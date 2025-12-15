@@ -9,7 +9,7 @@ import os
 
 # ⚠️ 1. МОДЕЛИЙН ЗАМ (PATH): Raw string (r') ашиглан best.pt-н бүрэн замыг оруулна.
 # Таны 300 epoch-ийн сургалтын үр дүн: planogram_detection_final
-MODEL_PATH = r'C:\Users\munkhtsetseg.b\Desktop\CM_Planogram\runs\detect\planogram_detection_final2\weights\best.pt' 
+MODEL_PATH = r'models/best.pt' 
 
 # ⚠️ 2. АНГИЛЛЫН НЭРС (CLASS_NAMES): data.yaml файлтай яг таарч байх ёстой.
 CLASS_NAMES = [

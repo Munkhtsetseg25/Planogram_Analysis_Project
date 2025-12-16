@@ -121,7 +121,7 @@ if yolo_model:
         plotted_image, analysis_df = process_image(img_array, yolo_model, CLASS_NAMES)
 
         # Үр дүнг зэрэгцүүлэн харуулах
-        col1, col2 = st.columns([2, 1])
+        col1, col2 = st.columns([2, 2])
 
         with col1:
             st.image(plotted_image, caption='Брэнд Илрүүлэлтийн Үр Дүн', width=800) 

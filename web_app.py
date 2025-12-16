@@ -124,7 +124,7 @@ if yolo_model:
         col1, col2 = st.columns([2, 1])
 
         with col1:
-            st.image(plotted_image, caption='Брэнд Илрүүлэлтийн Үр Дүн', width=600) 
+            st.image(plotted_image, caption='Брэнд Илрүүлэлтийн Үр Дүн', width=800) 
             # Эсвэл use_column_width=False хийгээд зөвхөн col1-ийн өргөнийг өөрчилж болно.
 
         # -------------------------------------------------------------------------------------------------

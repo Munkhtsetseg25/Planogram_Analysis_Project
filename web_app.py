@@ -110,96 +110,92 @@ st.caption("Олон лангууны зургийг нэг дор оруула�
 
 yolo_model = load_model()
 
+# ... (Эхний хэсэг хэвээр үлдэнэ) ...
+
 if yolo_model:
-    # ⚠️ ЗУРАГ ОРУУЛАХ ТАЛБАР: Олон файл хүлээн авах тохиргоог нэмсэн.
     uploaded_files = st.file_uploader(
         "Лангууны зургуудыг сонгох (.jpg, .png)", 
         type=['jpg', 'png', 'jpeg'],
-        accept_multiple_files=True # <--- ЭНЭ ГОЛ ӨӨРЧЛӨЛТ
+        accept_multiple_files=True 
     )
 
-    if uploaded_files: # Хувьсагчийн нэр uploaded_file-аас uploaded_files болж өөрчлөгдсөн.
-        
-        # ------------------ БӨӨНӨӨР БОЛОВСРУУЛАХ ҮЙЛ ЯВЦ -------------------
-        
-        # Бүх зургийн анализын үр дүнг хадгалах жагсаалт
+    if uploaded_files:
         all_results_df = []
         
-        st.subheader("🖼️ Анализ Хийгдэж Буй Зургууд")
+        st.subheader("🖼️ Зураг Тус Бүрийн Анализ")
         
-        # Бүх зураг дээр давталт хийх
+        # ⚠️ ЭНДЭЭС ГОЛ ӨӨРЧЛӨЛТ ЭХЭЛНЭ
+        # Зураг бүрийг боловсруулж, хажууд нь тайланг нь харуулна.
         for uploaded_file in uploaded_files:
+            st.markdown(f"---") # Зураг бүрийг ялгах зорилгоор зураас нэмэв
+            st.markdown(f"**Зургийн Нэр:** `{uploaded_file.name}`")
             
-            # Зургийг уншиж numpy array болгох
             file_bytes = np.asarray(bytearray(uploaded_file.read()), dtype=np.uint8)
             img_array = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
 
-            # Зургийг боловсруулж, үр дүнг авах
             plotted_image, analysis_df = process_image(img_array, yolo_model, CLASS_NAMES)
             
-            # Тайлангийн DataFrame-д зургийн нэрийг нэмэх
             analysis_df.insert(0, 'Filename', uploaded_file.name)
-            
-            # Нэгдсэн жагсаалтад нэмэх
             all_results_df.append(analysis_df)
 
-            # ⚠️ Зургуудыг харуулах (Бага хэмжээтэй)
-            st.image(plotted_image, caption=f'{uploaded_file.name} - Илрүүлэлтийн Үр Дүн', width=400)
+            # ⚠️ col1, col2-г loop дотор үүсгэж, зураг тус бүрийн хажууд тайланг харуулна.
+            col_img, col_report = st.columns([2, 1]) # Зураг 2/3, Тайлан 1/3
+
+            with col_img:
+                st.image(plotted_image, caption=f'{uploaded_file.name} - Илрүүлэлтийн Үр Дүн', width=600)
+                # width=600 нь зурагны хэмжээг жижигрүүлж, цагаан зайг багасгана.
             
-        # ------------------ НЭГДСЭН ТАЙЛАН ҮҮСГЭХ -------------------
+            with col_report:
+                st.markdown("##### 📊 Эзлэх Хувийн Тайлан")
+                if analysis_df["Occupancy (%)"].sum() > 0:
+                    st.dataframe(analysis_df[['Brand', 'Occupancy (%)']], use_container_width=True) # Зөвхөн брэнд, хувийг харуулна
+                    st.bar_chart(analysis_df.head(10), x='Brand', y='Occupancy (%)', use_container_width=True)
+                else:
+                    st.warning(f"'{uploaded_file.name}' зураг дээр брэнд илрээгүй.")
+        
+        # ------------------ НЭГДСЭН ТАЙЛАН ҮҮСГЭХ ХЭСЭГ (ЭНЭ ХЭСЭГ ДООРОО ХЭВЭЭР ҮЛДЭНЭ) -------------------
+        
+        st.markdown("---")
+        st.subheader("✅ Бүх Зургийн Нэгдсэн Анализын Үр Дүн")
         
         if all_results_df:
-            # Бүх DF-үүдийг нэгтгэнэ.
             final_df = pd.concat(all_results_df, ignore_index=True)
             
-            # Эзлэх хувийг зөв тооцоолохын тулд зөвхөн брэндээр нэгтгэж, 
-            # дундаж/нийлбэр (энэ тохиолдолд зөвхөн нийт мэдээллийг) харуулна.
-            
-            # Тайлбар: Олон зургийн эзлэх хувийг дундажлах нь оновчтой.
+            st.markdown("### 1. Зураг Бүрийн Дэлгэрэнгүй Тайлан (Raw Data - Хүснэгт)")
+            st.dataframe(final_df, use_container_width=True)
+
             summary_df = final_df.groupby('Brand').agg(
-                Count=('Filename', 'count'), # Хэдэн зурагт тус брэнд танигдсан тоо
-                Avg_Occupancy=('Occupancy (%)', 'mean') # Зураг бүрийн дундаж эзлэх хувь
+                Count=('Filename', 'count'), 
+                Avg_Occupancy=('Occupancy (%)', 'mean')
             ).reset_index()
-            
             summary_df = summary_df.sort_values(by='Avg_Occupancy', ascending=False).reset_index(drop=True)
             
-            # ------------------ ҮР ДҮНГИЙГ ХАРУУЛАХ ХЭСЭГ -------------------
-            
-            st.markdown("---")
-            st.subheader("✅ Нэгдсэн Анализын Үр Дүн")
-            
-            st.markdown("### 1. Зураг Бүрийн Дэлгэрэнгүй Тайлан (Raw Data)")
-            st.dataframe(final_df)
-
-            st.markdown("### 2. Брэнд Бүрийн Дундаж Эзлэх Хувь")
-            
-            # ⚠️ ЗАСВАР: Баганын нэр 'Avg_Occupancy' болсон.
+            st.markdown("### 2. Брэнд Бүрийн Дундаж Эзлэх Хувь (Хүснэгт)")
             if summary_df["Avg_Occupancy"].sum() > 0:
-                st.dataframe(summary_df)
+                st.dataframe(summary_df, use_container_width=True)
                 
-                # Тайланг Excel-ээр татах товч
-                # Pandas-ийн to_excel-ийг ашиглан олон sheet-тэй Excel үүсгэнэ.
                 @st.cache_data
-                def convert_df_to_excel(summary_df, final_df):
+                def convert_df_to_excel(final_df): # Зөвхөн final_df-г авна
                     from io import BytesIO
                     output = BytesIO()
                     with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
-                        summary_df.to_excel(writer, sheet_name='Summary_Avg_Occupancy', index=False)
                         final_df.to_excel(writer, sheet_name='Raw_Data_Per_Image', index=False)
                     processed_data = output.getvalue()
                     return processed_data
 
-                excel_data = convert_df_to_excel(summary_df, final_df)
+                excel_data = convert_df_to_excel(final_df) # Зөвхөн final_df-г дамжуулна
 
                 st.download_button(
-                    label="📥 Нэгдсэн Тайланг Excel-ээр татах (Download)",
+                    label="📥 Дэлгэрэнгүй Тайланг Excel-ээр татах (Download)",
                     data=excel_data,
-                    file_name='planogram_batch_analysis.xlsx',
+                    file_name='planogram_batch_raw_data.xlsx',
                     mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                 )
                 
-                st.subheader("График Дүрслэл (Дундаж Эзлэх Хувиар)")
+                st.subheader("3. Брэнд Бүрийн Дундаж Эзлэх Хувь (График)")
                 top_10_summary = summary_df.head(10)
-                st.bar_chart(top_10_summary, x='Brand', y='Avg_Occupancy') 
+                st.bar_chart(top_10_summary, x='Brand', y='Avg_Occupancy', use_container_width=True) 
             else:
                 st.warning("Оруулсан зургуудад ямар ч брэнд (объект) илрээгүй.")
+        else:
+            st.info("Анализ хийх зураг сонгоно уу.") # Хэрэв uploaded_files хоосон байвал
